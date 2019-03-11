@@ -26,7 +26,15 @@ class BladeParseServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->app['blade.compiler']->directive('markdown', function ($markdown) {
-            return "<?php echo app('bladeparse')->parse((string) {$markdown}); ?>";
+            if ($markdown) {
+                return "<?php echo app('bladeparse')->parse((string) {$markdown}); ?>";
+            }
+
+            return '<?php ob_start(); ?>';
+        });
+
+        $this->app['blade.compiler']->directive('endmarkdown', function () {
+            return "<?php echo app('bladeparse')->parse(ob_get_clean()); ?>";
         });
     }
 }
