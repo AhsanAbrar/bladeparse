@@ -24,6 +24,13 @@ composer require ahsanabrar/bladeparse
 or
 
 @markdown($markdown)
+
+or
+
+@markdown
+# Heading
+## Other Heading
+@endmarkdown
 ```
 
 That's it.
