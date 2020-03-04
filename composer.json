@@ -17,7 +17,7 @@
     "require": {
         "php": "^7.2.5",
         "illuminate/support": "5.6.*|5.7.*|5.8.*|^6.0|^7.0",
-        "erusev/parsedown-extra": "^0.8.1"
+        "erusev/parsedown-extra": "^0.7.1"
     },
     "config": {
         "optimize-autoloader": true,
